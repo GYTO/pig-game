@@ -1,3 +1,27 @@
+/*
+ *  Button mixin
+ *  @param (Button Name) $buttonName
+ *  @param (Animation Name) $animationName
+ *  @param (Animation Time) $animationTime - default 1s
+ *  @param (Animation Property) $animationProperty - default infinite
+ */
+@mixin buttonEffect(
+    $buttonName,
+    $animationName,
+    $animationTime: 1s,
+    $animationProperty: infinite) {
+  &.#{$buttonName} {
+    position  : absolute;
+    left      : 50%;
+    transform : translateX(-50%);
+    z-index   : 2;
+  }
+  &.#{$buttonName}:hover i {
+    animation : $animationName,
+                $animationTime,
+                $animationProperty;
+  }
+}
 .wrapper {
   height          : 100vh;
   background      : linear-gradient(-60deg, #48c6ef, #6f86d6);
@@ -29,13 +53,32 @@ button {
   &.btn-hold:hover i {
     animation : drop 1s infinite;
   }
-
+  &.btn-new {
+    position  : absolute;
+    left      : 50%;
+    transform : translateX(-50%);
+    top       : 30px;
+    z-index   : 2;
+  }
+  &.btn-hold {
+    position  : absolute;
+    left      : 50%;
+    transform : translateX(-50%);
+    bottom    : 30px;
+    z-index   : 2;
+  }
+  &.btn-roll {
+    position  : absolute;
+    left      : 50%;
+    transform : translateX(-50%);
+    bottom    : 80px;
+    z-index   : 2;
+  }
 }
 .player-0-panel,
 .player-1-panel {
   margin : 80px 0;
   &.active {
-
     &:before {
       content          : '';
       position         : absolute;
@@ -57,16 +100,6 @@ button {
   position       : relative;
   .active & {
     color : black;
-    &:after {
-      content     : '\f111';
-      font-weight : 900;
-      font-family : "Font Awesome 5 Free", sans-serif;
-      font-size   : 0.2em;
-      position    : absolute;
-      right       : 0;
-      top         : 5px;
-      color       : indianred;
-    }
   }
 }
 .player-score {
@@ -80,21 +113,32 @@ button {
   }
 }
 .player-current-box {
-  background-color : indianred;
+  background-color : rgba(indianred, 0.5);
   padding          : 10px 0;
   text-align       : center;
   width            : 120px;
   margin           : 80px auto 0;
+  .active & {
+    background-color : indianred;
+  }
 }
 .player-current-label {
   text-transform : uppercase;
   font-weight    : lighter;
   font-size      : 0.9em;
+  color          : rgba(black, 0.5);
+  .active & {
+    color : black;
+  }
 }
 .player-current-score {
-  font-size   : 2em;
+  font-size   : 1.8em;
   color       : white;
   font-weight : lighter;
+  color       : rgba(white, 0.5);
+  .active & {
+    color : white;
+  }
 }
 @keyframes spin {
   from {
@@ -109,7 +153,7 @@ button {
     transform : scale(1);
   }
   50% {
-    transform : scale(1.2);
+    transform : scale(1.1);
   }
   100% {
     transform : scale(1);

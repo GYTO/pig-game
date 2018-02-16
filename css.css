@@ -1,3 +1,10 @@
+/*
+ *  Button mixin
+ *  @param (Button Name) $buttonName
+ *  @param (Animation Name) $animationName
+ *  @param (Animation Time) $animationTime - default 1s
+ *  @param (Animation Property) $animationProperty - default 
+ */
 .wrapper {
   height: 100vh;
   background: linear-gradient(-60deg, #48c6ef, #6f86d6);
@@ -25,6 +32,24 @@ button {
     animation: jump 2s infinite; }
   button.btn-hold:hover i {
     animation: drop 1s infinite; }
+  button.btn-new {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+    z-index: 2; }
+  button.btn-hold {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    z-index: 2; }
+  button.btn-roll {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 80px;
+    z-index: 2; }
 
 .player-0-panel,
 .player-1-panel {
@@ -49,15 +74,6 @@ button {
   position: relative; }
   .active .player-name {
     color: black; }
-    .active .player-name:after {
-      content: '\f111';
-      font-weight: 900;
-      font-family: "Font Awesome 5 Free", sans-serif;
-      font-size: 0.2em;
-      position: absolute;
-      right: 0;
-      top: 5px;
-      color: indianred; }
 
 .player-score {
   font-size: 5em;
@@ -69,21 +85,29 @@ button {
     color: indianred; }
 
 .player-current-box {
-  background-color: indianred;
+  background-color: rgba(205, 92, 92, 0.5);
   padding: 10px 0;
   text-align: center;
   width: 120px;
   margin: 80px auto 0; }
+  .active .player-current-box {
+    background-color: indianred; }
 
 .player-current-label {
   text-transform: uppercase;
   font-weight: lighter;
-  font-size: 0.9em; }
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.5); }
+  .active .player-current-label {
+    color: black; }
 
 .player-current-score {
-  font-size: 2em;
+  font-size: 1.8em;
   color: white;
-  font-weight: lighter; }
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.5); }
+  .active .player-current-score {
+    color: white; }
 
 @keyframes spin {
   from {
@@ -94,7 +118,7 @@ button {
   0% {
     transform: scale(1); }
   50% {
-    transform: scale(1.2); }
+    transform: scale(1.1); }
   100% {
     transform: scale(1); } }
 @keyframes drop {

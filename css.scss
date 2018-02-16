@@ -9,18 +9,44 @@
  */
 @mixin buttonEffect($buttonName, $buttonParam, $buttonPosition, $animationName, $animationTime: 1s, $animationProperty: infinite) {
   &.#{$buttonName} {
-    position  : absolute;
-    left      : 50%;
-    transform : translateX(-50%);
-    z-index   : 2;
+    position         : absolute;
+    left             : 50%;
+    transform        : translateX(-50%);
+    z-index          : 2;
+    color            : black;
+    background-color : transparent;
+    border           : 0;
+    padding          : 6px 10px;
+    font-size        : 1.4em;
+    cursor           : pointer;
+    text-transform   : uppercase;
     i { color : indianred; }
     @if($buttonParam == 'top') { top : $buttonPosition; }
     @else if($buttonParam == 'bottom') { bottom : $buttonPosition; }
-  }
-  &.#{$buttonName}:hover i {
-    animation : $animationName $animationTime $animationProperty;
+    &:hover i {
+      animation : $animationName $animationTime $animationProperty;
+    }
+    &:focus { outline: none; }
   }
 }
+/*
+ *  Button mixin
+ *  @param (Color Type) $colorType
+ *  @param (Color) $color
+ */
+@mixin activeState($colorType, $color) {
+  #{$colorType}: rgba($color, 0.5);
+  .active & {
+    #{$colorType}: $color
+  }
+}
+
+* {
+  font-weight    : lighter;
+  text-align     : center;
+  text-transform : uppercase;
+}
+
 .wrapper {
   height          : 100vh;
   background      : linear-gradient(-60deg, #48c6ef, #6f86d6);
@@ -28,25 +54,21 @@
   justify-content : center;
   align-items     : center;
 }
+
 .card {
   box-shadow : 0 2px 30px -8px black;
 }
+
 button {
-  color            : black;
-  background-color : transparent;
-  border           : 0;
-  padding          : 6px 10px;
-  font-size        : 1.4em;
-  cursor           : pointer;
-  text-transform   : uppercase;
-  font-weight      : lighter;
   @include buttonEffect(btn-roll, bottom, 80px, spin, 1s);
   @include buttonEffect(btn-hold, bottom, 30px, drop, 1s);
   @include buttonEffect(btn-new, top, 30px, jump, 2s);
 }
+
 .player-0-panel,
 .player-1-panel {
   margin : 80px 0;
+  user-select: none;
   &.active {
     &:before {
       content          : '';
@@ -60,82 +82,49 @@ button {
     }
   }
 }
+
 .player-name {
-  text-transform : uppercase;
-  text-align     : center;
   font-size      : 3em;
-  font-weight    : lighter;
-  color          : rgba(black, 0.5);
   position       : relative;
-  .active & {
-    color : black;
-  }
+  @include activeState(color, black);
 }
+
 .player-score {
   font-size   : 5em;
   line-height : 1;
-  text-align  : center;
-  color       : rgba(indianred, 0.5);
-  font-weight : lighter;
-  .active & {
-    color : indianred;
-  }
+  @include activeState(color, indianred);
 }
+
 .player-current-box {
-  background-color : rgba(indianred, 0.5);
   padding          : 10px 0;
-  text-align       : center;
   width            : 120px;
   margin           : 80px auto 0;
-  .active & {
-    background-color : indianred;
-  }
+  @include activeState(background-color, indianred);
 }
+
 .player-current-label {
-  text-transform : uppercase;
-  font-weight    : lighter;
   font-size      : 0.9em;
-  color          : rgba(black, 0.5);
-  .active & {
-    color : black;
-  }
+  @include activeState(color, black);
 }
+
 .player-current-score {
   font-size   : 1.8em;
-  color       : white;
-  font-weight : lighter;
-  color       : rgba(white, 0.5);
-  .active & {
-    color : white;
-  }
+  @include activeState(color, white);
 }
+
 @keyframes spin {
-  from {
-    transform : rotate(0deg);
-  }
-  to {
-    transform : rotate(360deg);
-  }
+  from {transform : rotate(0deg);}
+  to {transform : rotate(360deg);}
 }
+
 @keyframes jump {
-  0% {
-    transform : scale(1);
-  }
-  50% {
-    transform : scale(1.1);
-  }
-  100% {
-    transform : scale(1);
-  }
+  0% {transform : scale(1);}
+  50% {transform : scale(1.1);}
+  100% {transform : scale(1);}
 }
+
 @keyframes drop {
-  0% {
-    transform : translateY(0);
-  }
-  50% {
-    transform : translateY(-6px);
-  }
-  100% {
-    transform : translateY(0);
-  }
+  0% {transform : translateY(0);}
+  50% {transform : translateY(-6px);}
+  100% {transform : translateY(0);}
 }

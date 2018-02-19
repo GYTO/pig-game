@@ -1,0 +1,42 @@
+/*
+ *  Button mixin
+ *  @param (Button Name) $buttonName
+ *  @param (Button Parameter) $buttonParam
+ *  @param (Button Position) $buttonPosition
+ *  @param (Animation Name) $animationName
+ *  @param (Animation Time) $animationTime - default 1s
+ *  @param (Animation Property) $animationProperty - default infinite
+ */
+@mixin buttonEffect($buttonName, $buttonParam, $buttonPosition, $animationName, $animationTime: 1s, $animationProperty: infinite) {
+  &.#{$buttonName} {
+    position         : absolute;
+    left             : 50%;
+    transform        : translateX(-50%);
+    z-index          : 2;
+    color            : black;
+    background-color : transparent;
+    border           : 0;
+    padding          : 6px 10px;
+    font-size        : 1.4em;
+    cursor           : pointer;
+    text-transform   : uppercase;
+    i { color : indianred; }
+    @if($buttonParam == 'top') { top : $buttonPosition; }
+    @else if($buttonParam == 'bottom') { bottom : $buttonPosition; }
+    &:hover i {
+      animation : $animationName $animationTime $animationProperty;
+    }
+    &:focus { outline: none; }
+  }
+}
+/*
+ *  Button mixin
+ *  @param (Color Type) $colorType
+ *  @param (Color) $color
+ */
+@mixin activeState($colorType, $color) {
+  #{$colorType}: rgba($color, 0.5);
+  .active & {
+    #{$colorType}: $color
+  }
+}

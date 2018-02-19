@@ -1,0 +1,46 @@
+.player-0-panel,
+.player-1-panel {
+  margin : 80px 0;
+  user-select: none;
+  &.active {
+    &:before {
+      content          : '';
+      position         : absolute;
+      left             : 0;
+      top              : 0;
+      width            : 100%;
+      height           : 100%;
+      display          : block;
+      background-color : rgba(gray, 0.1);
+    }
+  }
+}
+
+.player-name {
+  font-size      : 3em;
+  position       : relative;
+  @include activeState(color, black);
+}
+
+.player-score {
+  font-size   : 5em;
+  line-height : 1;
+  @include activeState(color, indianred);
+}
+
+.player-current-box {
+  padding          : 10px 0;
+  width            : 120px;
+  margin           : 80px auto 0;
+  @include activeState(background-color, indianred);
+}
+
+.player-current-label {
+  font-size      : 0.9em;
+  @include activeState(color, black);
+}
+
+.player-current-score {
+  font-size   : 1.8em;
+  @include activeState(color, white);
+}

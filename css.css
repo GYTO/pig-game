@@ -185,4 +185,12 @@ button.btn-new {
   box-shadow: 0 2px 30px -8px black;
   overflow: hidden; }
 
+canvas {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%; }
+
 /*# sourceMappingURL=css.css.map */

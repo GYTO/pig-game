@@ -2,8 +2,8 @@
         "scss/mixins",
         "scss/keyframes",
         "scss/player",
-        "scss/buttons";
-
+        "scss/buttons",
+        "scss/dice";
 .wrapper {
   height          : 100vh;
   background      : linear-gradient(-60deg, #48c6ef, #6f86d6);
@@ -11,16 +11,8 @@
   justify-content : center;
   align-items     : center;
 }
-
 .card {
   box-shadow : 0 2px 30px -8px black;
+  overflow   : hidden;
 }
 
-.dice {
-  width: 100px;
-  position : absolute;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 30px -5px rgba(black, 0.5);
-  top : 50%;
-  left: 50%;
-}

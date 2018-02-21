@@ -187,7 +187,6 @@ button.btn-question, button.btn-close {
 
 .card_wrapper {
   position: relative;
-  z-index: 1;
   height: 478px;
   perspective: 1000px;
   transition: transform 1s;

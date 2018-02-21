@@ -164,6 +164,17 @@ button.btn-new {
     animation: jump 2s infinite; }
   button.btn-new:focus {
     outline: none; }
+button.btn-question, button.btn-close {
+  background: none;
+  border: 0;
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 1;
+  color: darkgray; }
+  button.btn-question:focus, button.btn-close:focus {
+    outline: 0; }
 
 .dice {
   width: 80px;
@@ -174,6 +185,32 @@ button.btn-new {
   box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.3);
   border-radius: 5px; }
 
+.card_wrapper {
+  position: relative;
+  z-index: 1;
+  height: 478px;
+  perspective: 1000px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%; }
+  .card_wrapper.flipped {
+    transform: rotateY(180deg); }
+
+.card {
+  box-shadow: 0 2px 30px -8px black;
+  overflow: hidden;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border: 0;
+  position: absolute;
+  z-index: 1; }
+
+.card_back {
+  transform: rotateY(180deg); }
+
 .wrapper {
   height: 100vh;
   background: linear-gradient(-60deg, #48c6ef, #6f86d6);
@@ -181,9 +218,11 @@ button.btn-new {
   justify-content: center;
   align-items: center; }
 
-.card {
-  box-shadow: 0 2px 30px -8px black;
-  overflow: hidden; }
+.game-rules {
+  padding: 30px; }
+  .game-rules p, .game-rules li {
+    text-align: left;
+    text-transform: none; }
 
 canvas {
   display: block;

@@ -117,13 +117,13 @@ canvas.addEventListener('mousemove', (e) => {
 
 // Track when mouse is pressed.
 canvas.addEventListener('mousedown', (e) => {
-  e.preventDefault()
+  e.preventDefault();
   isMouseDown = true
 });
 
 // Track when mouse is released.
 canvas.addEventListener('mouseup', (e) => {
-  e.preventDefault()
+  e.preventDefault();
   isMouseDown = false
 });
 
@@ -205,7 +205,7 @@ Firework.prototype.update = function(index) {
     this.x += xVelocity;
     this.y += yVelocity;
   }
-}
+};
 
 // Draw a firework.
 // Use CanvasRenderingContext2D methods to create strokes as firework paths.
@@ -232,7 +232,7 @@ Firework.prototype.draw = function() {
     // Draw stroke.
     context.stroke();
   }
-}
+};
 
 // Creates a new particle at provided 'x' and 'y' coordinates.
 function Particle(x, y) {
@@ -287,7 +287,7 @@ Particle.prototype.update = function(index) {
     // Destroy particle once transparency level is below decay.
     particles.splice(index, 1);
   }
-}
+};
 
 // Draw a particle.
 // Use CanvasRenderingContext2D methods to create strokes as particle paths.
@@ -304,7 +304,7 @@ Particle.prototype.draw = function() {
   // Use hue, brightness, and transparency instead of RGBA.
   context.strokeStyle = `hsla(${this.hue}, 100%, ${this.brightness}%, ${this.transparency})`;
   context.stroke();
-}
+};
 
 // === END PROTOTYPING ===
 
@@ -408,9 +408,9 @@ function updateParticles() {
 // === END APP HELPERS ===
 
 // Primary loop.
-function loop() {
+function firework() {
   // Smoothly request animation frame for each loop iteration.
-  requestAnimFrame(loop);
+  requestAnimFrame(firework);
 
   // Adjusts coloration of fireworks over time.
   hue += HUE_STEP_INCREASE;
@@ -432,4 +432,4 @@ function loop() {
 }
 
 // Initiate loop after window loads.
-window.onload = loop;
+// window.onload = firework;

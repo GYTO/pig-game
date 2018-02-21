@@ -219,12 +219,13 @@ button.btn-question, button.btn-close {
 
 .game-rules {
   padding: 30px; }
-  .game-rules p, .game-rules li {
+  .game-rules p, .game-rules li, .game-rules a, .game-rules small {
     text-align: left;
-    text-transform: none; }
+    text-transform: none;
+    font-size: 15px; }
 
 canvas {
-  display: block;
+  display: none;
   position: absolute;
   left: 0;
   top: 0;

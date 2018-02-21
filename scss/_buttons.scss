@@ -2,8 +2,7 @@ button {
   @include buttonEffect(btn-roll, bottom, 80px, spin, 1s);
   @include buttonEffect(btn-hold, bottom, 30px, drop, 1s);
   @include buttonEffect(btn-new, top, 30px, jump, 2s);
-  &.btn-question,
-  &.btn-close {
+  &.btn-flip {
     background : none;
     border     : 0;
     position   : absolute;

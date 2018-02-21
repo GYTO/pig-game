@@ -164,7 +164,7 @@ button.btn-new {
     animation: jump 2s infinite; }
   button.btn-new:focus {
     outline: none; }
-button.btn-question, button.btn-close {
+button.btn-flip {
   background: none;
   border: 0;
   position: absolute;
@@ -173,7 +173,7 @@ button.btn-question, button.btn-close {
   cursor: pointer;
   z-index: 1;
   color: darkgray; }
-  button.btn-question:focus, button.btn-close:focus {
+  button.btn-flip:focus {
     outline: 0; }
 
 .dice {

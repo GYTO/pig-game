@@ -266,7 +266,8 @@ button.btn-flip {
       color: white;
       padding: 6px 10px;
       border-radius: 3px;
-      flex: 1; } }
+      flex: 1;
+      text-transform: uppercase; } }
 
 .dice {
   width: 80px;

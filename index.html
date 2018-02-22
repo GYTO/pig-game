@@ -13,76 +13,78 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="card_wrapper mt-5 mb-5">
-                    <div class="card card_front">
-                        <div class="row">
-                            <div class="col-12">
-                                <button class="btn-new">New game <i class="fas fa-plus-circle"></i></button>
-                                <button class="btn-flip"><i class="fas fa-question-circle"></i> Game Rules</button>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="player-0-panel active">
-                                    <div class="player-name" id="name-0">Player 1</div>
-                                    <div class="player-score" id="score-0"></div>
-                                    <div class="player-current-box">
-                                        <div class="player-current-label">Current</div>
-                                        <div class="player-current-score" id="current-0"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="player-1-panel">
-                                    <div class="player-name" id="name-1">Player 2</div>
-                                    <div class="player-score" id="score-1"></div>
-                                    <div class="player-current-box">
-                                        <div class="player-current-label">Current</div>
-                                        <div class="player-current-score" id="current-1"></div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-12">
-                                <button class="btn-roll">Roll dice <i class="fas fa-sync"></i></button>
-                                <button class="btn-hold">Hold <i class="fas fa-arrow-alt-circle-down"></i></button>
-                            </div>
-                            <img src="images/dice-1.png" alt="Dice" class="dice">
+                <div class="card mt-o mb-0 mt--sm5 mb-sm-5">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                            <button class="btn-new">New game <i class="fas fa-plus-circle"></i></button>
+                            <button class="btn-flip">Game Rules <i class="fas fa-question-circle"></i></button>
                         </div>
-                    </div>
-                    <div class="card card_back">
-                        <div class="row">
-                            <div class="col-12">
-                                <button class="btn-flip"><i class="fas fa-times-circle"></i> Close</button>
-                                <div class="game-rules">
-                                    <h2>Game Rules</h2>
-                                    <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player
-                                        decides to "hold":
-                                    </p>
-                                    <ul>
-                                        <li>If the player rolls a 1, they score nothing and it becomes the next player's
-                                            turn.
-                                        </li>
-                                        <li>If the player rolls any other number, it is added to their turn total and the
-                                            player's turn continues.
-                                        </li>
-                                        <li>If a player chooses to "hold", their turn total is added to their score, and it
-                                            becomes the next player's turn.
-                                        </li>
-                                    </ul>
-                                    <p>The first player to score 100 or more points wins.</p>
-                                    <p>For example, the first player, Anne, begins a turn with a roll of 5. Anne could hold
-                                        and score 5 points, but chooses to roll again. Anne rolls a 2, and could hold with a
-                                        turn total of 7 points, but chooses to roll again. Anne rolls a 1, and must end her
-                                        turn without scoring. The next player, Bob, rolls the sequence 4-5-3-5-5, after
-                                        which he chooses to hold, and adds his turn total of 22 points to his score.
-                                    </p>
-                                    <p><a href="https://en.wikipedia.org/wiki/Pig_(dice_game)" target="_blank">
-                                        <small><i class="fab fa-wikipedia-w"></i> Wikipedia Article</small>
-                                    </a></p>
+                        <div class="col-6">
+                            <div class="player-0-panel active">
+                                <div class="player-name" id="name-0">Player 1</div>
+                                <div class="player-score" id="score-0"></div>
+                                <div class="player-current-box">
+                                    <div class="player-current-label">Current</div>
+                                    <div class="player-current-score" id="current-0"></div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-6">
+                            <div class="player-1-panel">
+                                <div class="player-name" id="name-1">Player 2</div>
+                                <div class="player-score" id="score-1"></div>
+                                <div class="player-current-box">
+                                    <div class="player-current-label">Current</div>
+                                    <div class="player-current-score" id="current-1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-between">
+                            <button class="btn-roll">Roll dice <i class="fas fa-sync"></i></button>
+                            <button class="btn-hold">Hold <i class="fas fa-arrow-alt-circle-down"></i></button>
+                        </div>
+                        <img src="images/dice-1.png" alt="Dice" class="dice">
                     </div>
                 </div>
+
+                <!--<div class="card_wrapper">-->
+                    <!--<div class="card">-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-12">-->
+                                <!--<button class="btn-flip"><i class="fas fa-times-circle"></i> Close</button>-->
+                                <!--<div class="game-rules">-->
+                                    <!--<h2>Game Rules</h2>-->
+                                    <!--<p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player-->
+                                        <!--decides to "hold":-->
+                                    <!--</p>-->
+                                    <!--<ul>-->
+                                        <!--<li>If the player rolls a 1, they score nothing and it becomes the next player's-->
+                                            <!--turn.-->
+                                        <!--</li>-->
+                                        <!--<li>If the player rolls any other number, it is added to their turn total and the-->
+                                            <!--player's turn continues.-->
+                                        <!--</li>-->
+                                        <!--<li>If a player chooses to "hold", their turn total is added to their score, and it-->
+                                            <!--becomes the next player's turn.-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                    <!--<p>The first player to score 100 or more points wins.</p>-->
+                                    <!--<p>For example, the first player, Anne, begins a turn with a roll of 5. Anne could hold-->
+                                        <!--and score 5 points, but chooses to roll again. Anne rolls a 2, and could hold with a-->
+                                        <!--turn total of 7 points, but chooses to roll again. Anne rolls a 1, and must end her-->
+                                        <!--turn without scoring. The next player, Bob, rolls the sequence 4-5-3-5-5, after-->
+                                        <!--which he chooses to hold, and adds his turn total of 22 points to his score.-->
+                                    <!--</p>-->
+                                    <!--<p><a href="https://en.wikipedia.org/wiki/Pig_(dice_game)" target="_blank">-->
+                                        <!--<small><i class="fab fa-wikipedia-w"></i> Wikipedia Article</small>-->
+                                    <!--</a></p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
     </div>

@@ -1,20 +1,24 @@
 .player-0-panel,
 .player-1-panel {
-  margin : 80px 0;
-  user-select: none;
+  margin      : 80px 0;
+  user-select : none;
   @include panelBg(active, gray);
   @include panelBg(winner, red);
+  @include break(xs) {
+    margin : 60px 0;
+  }
 }
-
 .player-name {
-  font-size      : 3em;
-  position       : relative;
+  font-size : 3em;
+  position  : relative;
   @include activeState(color, black);
   .winner & {
     color : indianred;
   }
+  @include break(xs) {
+    font-size : 1.4rem;
+  }
 }
-
 .player-score {
   font-size   : 5em;
   line-height : 1;
@@ -22,21 +26,32 @@
   .winner & {
     color : indianred;
   }
+  @include break(xs) {
+    font-size : 3rem;
+  }
 }
-
 .player-current-box {
-  padding          : 10px 0;
-  width            : 120px;
-  margin           : 80px auto 0;
+  padding       : 10px 0;
+  width         : 120px;
+  border-radius : 3px;
+  margin        : 80px auto 0;
   @include activeState(background-color, indianred);
+  @include break(xs) {
+    margin : 20px auto 0;
+    width  : 100px;
+  }
 }
-
 .player-current-label {
-  font-size      : 0.9em;
+  font-size : 0.9em;
   @include activeState(color, black);
+  @include break(xs) {
+    font-size: 0.7rem;
+  }
 }
-
 .player-current-score {
-  font-size   : 1.8em;
+  font-size : 1.8em;
   @include activeState(color, white);
+  @include break(xs) {
+    font-size: 1.2rem;
+  }
 }

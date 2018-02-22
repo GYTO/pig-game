@@ -27,6 +27,23 @@
       animation : $animationName $animationTime $animationProperty;
     }
     &:focus { outline: none; }
+    @include break(xs) {
+      position         : inherit;
+      left             : inherit;
+      right            : inherit;
+      bottom           : inherit;
+      top              : inherit;
+      transform        : inherit;
+      font-size        : 1rem;
+      background-color : indianred;
+      color            : white;
+      border-radius    : 3px;
+      margin           : 3px 5px;
+      flex             : 1;
+      i {
+        color         : white;
+      }
+    }
   }
 }
 /*

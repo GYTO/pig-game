@@ -1,4 +1,5 @@
 @import "scss/root",
+        "scss/breakpoints",
         "scss/mixins",
         "scss/keyframes",
         "scss/player",
@@ -13,7 +14,7 @@
   align-items     : center;
 }
 .game-rules {
-  padding        : 30px;
+  padding : 30px;
   p, li, a, small {
     text-align     : left;
     text-transform : none;

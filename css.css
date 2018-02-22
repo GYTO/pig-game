@@ -6,6 +6,18 @@
   text-align: center;
   text-transform: uppercase; }
 
+/**
+ *  Responsive Breakpoints
+ *  @access private
+ *  @type Breakpoints
+ */
+/**
+ *  Responsive Breakpoints
+ *  @access private
+ *  @type  Breakpoint function to define $breakpoints
+ *  @param {Media Query} $breakpoints
+ *
+ */
 /*
  *  Button mixin
  *  @param (Button Name) $buttonName
@@ -68,6 +80,10 @@
     height: 100%;
     display: block;
     background-color: rgba(255, 0, 0, 0.1); }
+  @media only screen and (max-width: 576px) {
+    .player-0-panel,
+    .player-1-panel {
+      margin: 60px 0; } }
 
 .player-name {
   font-size: 3em;
@@ -77,6 +93,9 @@
     color: black; }
   .winner .player-name {
     color: indianred; }
+  @media only screen and (max-width: 576px) {
+    .player-name {
+      font-size: 1.4rem; } }
 
 .player-score {
   font-size: 5em;
@@ -86,26 +105,40 @@
     color: indianred; }
   .winner .player-score {
     color: indianred; }
+  @media only screen and (max-width: 576px) {
+    .player-score {
+      font-size: 3rem; } }
 
 .player-current-box {
   padding: 10px 0;
   width: 120px;
+  border-radius: 3px;
   margin: 80px auto 0;
   background-color: rgba(205, 92, 92, 0.5); }
   .active .player-current-box {
     background-color: indianred; }
+  @media only screen and (max-width: 576px) {
+    .player-current-box {
+      margin: 20px auto 0;
+      width: 100px; } }
 
 .player-current-label {
   font-size: 0.9em;
   color: rgba(0, 0, 0, 0.5); }
   .active .player-current-label {
     color: black; }
+  @media only screen and (max-width: 576px) {
+    .player-current-label {
+      font-size: 0.7rem; } }
 
 .player-current-score {
   font-size: 1.8em;
   color: rgba(255, 255, 255, 0.5); }
   .active .player-current-score {
     color: white; }
+  @media only screen and (max-width: 576px) {
+    .player-current-score {
+      font-size: 1.2rem; } }
 
 button.btn-roll {
   position: absolute;
@@ -126,6 +159,22 @@ button.btn-roll {
     animation: spin 1s infinite; }
   button.btn-roll:focus {
     outline: none; }
+  @media only screen and (max-width: 576px) {
+    button.btn-roll {
+      position: inherit;
+      left: inherit;
+      right: inherit;
+      bottom: inherit;
+      top: inherit;
+      transform: inherit;
+      font-size: 1rem;
+      background-color: indianred;
+      color: white;
+      border-radius: 3px;
+      margin: 3px 5px;
+      flex: 1; }
+      button.btn-roll i {
+        color: white; } }
 button.btn-hold {
   position: absolute;
   left: 50%;
@@ -145,6 +194,22 @@ button.btn-hold {
     animation: drop 1s infinite; }
   button.btn-hold:focus {
     outline: none; }
+  @media only screen and (max-width: 576px) {
+    button.btn-hold {
+      position: inherit;
+      left: inherit;
+      right: inherit;
+      bottom: inherit;
+      top: inherit;
+      transform: inherit;
+      font-size: 1rem;
+      background-color: indianred;
+      color: white;
+      border-radius: 3px;
+      margin: 3px 5px;
+      flex: 1; }
+      button.btn-hold i {
+        color: white; } }
 button.btn-new {
   position: absolute;
   left: 50%;
@@ -164,6 +229,22 @@ button.btn-new {
     animation: jump 2s infinite; }
   button.btn-new:focus {
     outline: none; }
+  @media only screen and (max-width: 576px) {
+    button.btn-new {
+      position: inherit;
+      left: inherit;
+      right: inherit;
+      bottom: inherit;
+      top: inherit;
+      transform: inherit;
+      font-size: 1rem;
+      background-color: indianred;
+      color: white;
+      border-radius: 3px;
+      margin: 3px 5px;
+      flex: 1; }
+      button.btn-new i {
+        color: white; } }
 button.btn-flip {
   background: none;
   border: 0;
@@ -175,6 +256,17 @@ button.btn-flip {
   color: darkgray; }
   button.btn-flip:focus {
     outline: 0; }
+  @media only screen and (max-width: 576px) {
+    button.btn-flip {
+      position: inherit;
+      right: inherit;
+      top: inherit;
+      background-color: indianred;
+      margin: 3px 6px;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 3px;
+      flex: 1; } }
 
 .dice {
   width: 80px;
@@ -185,30 +277,10 @@ button.btn-flip {
   box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.3);
   border-radius: 5px; }
 
-.card_wrapper {
-  position: relative;
-  height: 478px;
-  perspective: 1000px;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  transform-origin: 50% 50%; }
-  .card_wrapper.flipped {
-    transform: rotateY(180deg); }
-
 .card {
   box-shadow: 0 2px 30px -8px black;
   overflow: hidden;
-  backface-visibility: hidden;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  border: 0;
-  position: absolute;
-  z-index: 1; }
-
-.card_back {
-  transform: rotateY(180deg); }
+  width: 100%; }
 
 .wrapper {
   height: 100vh;

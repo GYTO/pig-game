@@ -23,11 +23,21 @@ canvas {
   width    : 100%;
 }
 .github {
-  position       : absolute;
-  bottom         : 3px;
-  right          : 3px;
+  position   : absolute;
+  bottom     : 3px;
+  right      : 0;
+  left       : 0;
+  width      : 100%;
+  text-align : center;
   a {
+    padding        : 0 3px;
     color          : black;
+    border-radius  : 3px;
     text-transform : none;
+    &:hover {
+      text-decoration  : none;
+      background-color : black;
+      color            : white;
+    }
   }
 }

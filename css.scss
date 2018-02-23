@@ -5,21 +5,14 @@
         "scss/player",
         "scss/buttons",
         "scss/dice",
-        "scss/card";
+        "scss/card",
+        "scss/game_rules";
 .wrapper {
   height          : 100vh;
   background      : linear-gradient(-60deg, #48c6ef, #6f86d6);
   display         : flex;
   justify-content : center;
   align-items     : center;
-}
-.game-rules {
-  padding : 30px;
-  p, li, a, small {
-    text-align     : left;
-    text-transform : none;
-    font-size      : 15px;
-  }
 }
 canvas {
   display  : none;
@@ -29,4 +22,12 @@ canvas {
   height   : 100%;
   width    : 100%;
 }
-
+.github {
+  position       : absolute;
+  bottom         : 3px;
+  right          : 3px;
+  a {
+    color          : black;
+    text-transform : none;
+  }
+}

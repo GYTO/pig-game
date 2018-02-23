@@ -100,4 +100,6 @@ function init() {
 
     playerZeroPanel.classList.add('active');
 
+    document.getElementById('canvas').style.display = 'none';
+
 }

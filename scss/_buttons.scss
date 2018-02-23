@@ -18,13 +18,18 @@ button {
       position         : inherit;
       right            : inherit;
       top              : inherit;
-      background-color : indianred;
+      background-color : lighten(indianred, 6%);
       margin           : 3px 6px;
       color            : white;
       padding          : 6px 10px;
       border-radius    : 3px;
       flex             : 1;
       text-transform   : uppercase;
+      &--close {
+        position: absolute;
+        right      : 5px;
+        top        : 10px;
+      }
     }
   }
 }

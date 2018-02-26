@@ -282,6 +282,12 @@ button.btn-flip {
   box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.3);
   border-radius: 5px; }
 
+#dice-1 {
+  top: 30%; }
+
+#dice-2 {
+  top: 50%; }
+
 .card {
   box-shadow: 0 2px 30px -8px black;
   overflow: hidden;

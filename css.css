@@ -323,6 +323,21 @@ button.btn-flip {
   justify-content: center;
   align-items: center; }
 
+.final-score {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  color: #555555;
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  padding: 10px;
+  width: 160px;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+  .final-score:focus {
+    outline: none; }
+
 canvas {
   display: none;
   position: absolute;

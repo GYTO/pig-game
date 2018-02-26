@@ -29,6 +29,10 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 
         if (dice === 6 && lastDice === 6) {
 
+            // Player loose the score
+            scores[activePlayer] = 0;
+            document.querySelector('#score-' + activePlayer).textContent = '0';
+            nextPlayer();
         } else if (dice !== 1) {
             // add score
             roundScores += dice;
